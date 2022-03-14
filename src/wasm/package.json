@@ -1,0 +1,15 @@
+{
+  "name": "webessembly-example",
+  "collaborators": [
+    "Milo-Shen"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "webessembly_example_bg.wasm",
+    "webessembly_example.js",
+    "webessembly_example.d.ts"
+  ],
+  "module": "webessembly_example.js",
+  "types": "webessembly_example.d.ts",
+  "sideEffects": false
+}
