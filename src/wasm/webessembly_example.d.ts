@@ -19,6 +19,11 @@ export function plus_ten(num: number): number;
 * @returns {number}
 */
 export function plus_ten_simd(num: number): number;
+/**
+* @param {number} num
+* @returns {number}
+*/
+export function plus_ten_simd_threads(num: number): number;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
@@ -28,6 +33,7 @@ export interface InitOutput {
   readonly run_fibonacci: (a: number, b: number) => number;
   readonly plus_ten: (a: number) => number;
   readonly plus_ten_simd: (a: number) => number;
+  readonly plus_ten_simd_threads: (a: number) => number;
 }
 
 /**

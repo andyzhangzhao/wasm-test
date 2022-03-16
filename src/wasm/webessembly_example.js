@@ -50,6 +50,15 @@ export function plus_ten_simd(num) {
     return ret;
 }
 
+/**
+* @param {number} num
+* @returns {number}
+*/
+export function plus_ten_simd_threads(num) {
+    var ret = wasm.plus_ten_simd_threads(num);
+    return ret;
+}
+
 async function load(module, imports) {
     if (typeof Response === 'function' && module instanceof Response) {
         if (typeof WebAssembly.instantiateStreaming === 'function') {
@@ -87,7 +96,7 @@ async function init(input) {
     }
     const imports = {};
     imports.wbg = {};
-    imports.wbg.__wbg_alert_3d6ff463e17f342f = function(arg0, arg1) {
+    imports.wbg.__wbg_alert_d02ba7ad08afde98 = function(arg0, arg1) {
         alert(getStringFromWasm0(arg0, arg1));
     };
 

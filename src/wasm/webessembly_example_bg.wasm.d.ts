@@ -5,3 +5,4 @@ export function greet(): void;
 export function run_fibonacci(a: number, b: number): number;
 export function plus_ten(a: number): number;
 export function plus_ten_simd(a: number): number;
+export function plus_ten_simd_threads(a: number): number;

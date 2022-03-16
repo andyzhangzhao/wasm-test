@@ -3,7 +3,7 @@
   "collaborators": [
     "Milo-Shen"
   ],
-  "version": "0.1.0",
+  "version": "1.0.0",
   "files": [
     "webessembly_example_bg.wasm",
     "webessembly_example.js",
