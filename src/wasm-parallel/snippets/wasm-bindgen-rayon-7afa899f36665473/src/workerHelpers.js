@@ -19,7 +19,7 @@
 // like just `0` or whatever, but the code would be less resilient.
 
 function waitForMsgType(target, type) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     target.addEventListener('message', function onMsg({ data }) {
       if (data == null || data.type !== type) return;
       target.removeEventListener('message', onMsg);
@@ -28,7 +28,7 @@ function waitForMsgType(target, type) {
   });
 }
 
-waitForMsgType(self, 'wasm_bindgen_worker_init').then(async data => {
+waitForMsgType(this, 'wasm_bindgen_worker_init').then(async (data) => {
   // # Note 1
   // Our JS should have been generated in
   // `[out-dir]/snippets/wasm-bindgen-rayon-[hash]/workerHelpers.js`,
@@ -71,7 +71,7 @@ export async function startWorkers(module, memory, builder) {
     type: 'wasm_bindgen_worker_init',
     module,
     memory,
-    receiver: builder.receiver()
+    receiver: builder.receiver(),
   };
 
   _workers = await Promise.all(
@@ -93,12 +93,12 @@ export async function startWorkers(module, memory, builder) {
       // The only way to work around that is to have side effect code
       // in an entry point such as Worker file itself.
       const worker = new Worker(new URL('./workerHelpers.js', import.meta.url), {
-        type: 'module'
+        type: 'module',
       });
       worker.postMessage(workerInit);
       await waitForMsgType(worker, 'wasm_bindgen_worker_ready');
       return worker;
-    })
+    }),
   );
   builder.build();
 }
